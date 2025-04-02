@@ -1,0 +1,42 @@
+﻿@model List<DAO.Movie>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+    <h1 style="color: white">Your Wishlist</h1>
+    <h4 style="color: white">This is all the movies you have saved in your wishlist!</h4>
+    @if (Model.Any())
+    {
+    <div style="background-color: white" class="movie-grid">
+            @foreach (var movie in Model)
+            {
+            <div>
+                    <div class="movie-card" onclick="handleClick('@Url.Action("Details", "Movie", new { id = movie.id })')">
+                        <div>
+                            <h4>@movie.title</h4>
+                            <img src="@($"https://image.tmdb.org/t/p/w500{movie.Poster_Path}")" />
+                        </div>
+                    </div>
+                            <form method="post" asp-action="Delete" asp-route-movieid="@movie.id" class="remove-form">
+                                <button style="width: 100%" type="submit" class="btn btn-danger">Remove from Wishlist</button>
+                            </form>
+                    </div>
+            }
+    </div>
+    }
+    else
+    {
+        <p>Your wishlist is empty.</p>
+    }
+
+
+
+
+<script>
+
+    function handleClick(url) {
+        window.location.href = url;  // Perform the redirection
+    }
+
+</script>

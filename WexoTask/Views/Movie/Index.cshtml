@@ -1,0 +1,48 @@
+﻿
+@model List<DAO.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color: white">Movies in Genre</h1>
+<h3 style="color: white">There is a total of @ViewBag.NumberOfMovies Movies!</h3>
+
+<div class="movie-grid">
+    @foreach(var movie in Model)
+    {
+        <div class="movie-card" onclick="handleClick('@Url.Action("Details", "Movie", new { id = movie.id })')">
+        <div>
+            <h4>@movie.title</h4>
+            <img src="@($"https://image.tmdb.org/t/p/w500{movie.Poster_Path}")" />
+        </div>
+        </div>
+    }
+</div>
+
+<!-- Pagination -->
+
+<div>
+    @if(ViewBag.CurrentPage > 1)
+    {
+    <a style="color: white" href="@Url.Action("Index", "Movie", new { genreId = ViewBag.GenreId, page = ViewBag.PreviousPage })">Previous</a>
+    }
+
+    <span style="color: white">Page @ViewBag.CurrentPage</span>
+
+    <a style="color: white" href="@Url.Action("Index", "Movie", new { genreId = ViewBag.GenreId, page = ViewBag.NextPage })">Next</a>
+
+</div>
+
+
+<script>
+
+    function handleClick(url) {
+        window.location.href = url;  // Perform the redirection
+    }
+
+</script>
+
+
+
+

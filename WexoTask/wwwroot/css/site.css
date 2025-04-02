@@ -1,0 +1,254 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #101010;
+}
+
+
+/* Navbar background color */
+.navbar {
+    background-color: #101010 !important; /* Change to desired color */
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white !important;
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+.genres-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures genres move to the next line if necessary */
+    gap: 20px; /* Spacing between the genre cards */
+    margin-top: 50px;
+}
+
+.genre-card {
+
+    flex: 1 0 18%; /* Each genre card will take about 18% of the container width */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between movie cards */
+}
+
+    .genre-card .movie-card {
+        margin-bottom: 10px; /* Ensures extra spacing between movie cards */
+    }
+
+    .genre-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+@media (max-width: 1200px) {
+    .genre-card {
+        flex: 1 0 23%; /* For medium-sized screens, show 4 genres per row */
+    }
+}
+
+@media (max-width: 800px) {
+    .genre-card {
+        flex: 1 0 48%; /* For small screens, show 2 genres per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .genre-card {
+        flex: 1 0 100%; /* For extra small screens, show 1 genre per row */
+    }
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.movie-card {
+    background: #F5F5F5;
+    color: #101010;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .movie-card:hover {
+        transform: scale(1.05);
+    }
+
+    .movie-card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 3px solid #ff4757;
+    }
+
+    .movie-card h4 {
+        font-size: 18px;
+        margin: 10px 0;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+    .movie-card a {
+        text-decoration: none;
+        color: inherit; /* Inherits the color from parent */
+    }
+
+
+
+
+
+/* Overall Container Style */
+.details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Background Image for Movie */
+.movie-background {
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Movie Title Styling */
+.movie-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Movie Information Section */
+.movie-info dl {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.movie-info dt {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.movie-info dd {
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+
+
+    /* Styling for Genre and Actor Divs */
+    .movie-info dd div {
+        margin-bottom: 10px;
+        font-size: 1em;
+        font-weight: normal;
+        color: #555;
+        padding: 3px 5px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    /* Actors Names - Display them in a row with space between */
+    .movie-info dd .actors-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px; /* Creates a gap between actor names */
+    }
+
+        .movie-info dd .actors-list div {
+            margin-bottom: 0; /* Remove extra bottom margin */
+            font-size: 1em;
+            font-weight: normal;
+            color: #555;
+            padding: 3px 5px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            white-space: nowrap; /* Prevent names from breaking into multiple lines */
+        }
+
+
+
+/* Movie Poster Styling */
+.movie-poster {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Button Styling */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+
+}

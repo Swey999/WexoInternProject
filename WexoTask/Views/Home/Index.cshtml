@@ -1,0 +1,44 @@
+﻿@model List<DAO.Genre>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div id="eventList">
+        <h1 style=" color: #F5F5F5">Genres</h1>
+        <div class="genres-container">
+
+        @foreach(var eventitem in Model)
+        {
+            @if (eventitem.Name == "Action" || eventitem.Name == "Comedy" || eventitem.Name == "Thriller" || eventitem.Name == "War" || eventitem.Name == "Romance" || eventitem.Name == "Drama" || eventitem.Name == "Crime" || eventitem.Name == "Documentary" || eventitem.Name == "Horror")
+            {
+                    
+            <div class="genre-card">
+
+            <h3>@eventitem.Name</h3>
+                    <button onclick="handleClick('@Url.Action("Index", "Movie", new { genreId = eventitem.Id, page = 1 })')">More Movies</button>
+            <p> Number of Movies: @eventitem.numberOfMovies</p>
+            @foreach (var movie in eventitem.Movies.Take(3))
+            {
+                  <div class="movie-card" onclick="handleClick('@Url.Action("Details", "Movie", new { id = movie.id })')">
+                    <div class="movie-content">
+                        <h4>@movie.title</h4>
+                        <img src="@($"https://image.tmdb.org/t/p/w500{movie.Poster_Path}")" />
+                    </div>
+                </div>
+            }
+            </div>
+            }
+        }
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function handleClick(url) {
+        window.location.href = url;  // Perform the redirection
+    }
+
+</script>
+

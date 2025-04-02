@@ -1,0 +1,61 @@
+﻿@model DAO.Movie
+
+<div class="details-container">
+    <!-- Movie Background Image -->
+    <div class="movie-background" style="background-image: url('@($"https://image.tmdb.org/t/p/w500{Model.backdrop_path}")');"></div>
+
+    <!-- Movie Title -->
+    <h1>@Model.title</h1>
+
+    <!-- Movie Information Section -->
+    <h4 class="movie-title">Movie Details</h4>
+    <hr />
+
+    <div class="movie-info">
+        <dl>
+            <!-- Movie Title -->
+            <dt>Title</dt>
+            <dd>@Model.title</dd>
+
+            <!-- Release Year -->
+            <dt>Release Year</dt>
+            <dd>@Model.release_date</dd>
+
+            <!-- Movie Overview/Description -->
+            <dt>Description</dt>
+            <dd>@Model.overview</dd>
+
+            <!-- Genres -->
+            <dt>Genre:</dt>
+            <dd>
+                @foreach (var genre in Model.genres)
+                {
+                    <div>@genre.Name</div>
+                }
+            </dd>
+
+            <!-- Actors -->
+            <dt>Actors:</dt>
+            <dd>
+                <div class="actors-list">
+                @foreach (var credit in Model.Credits)
+                {
+                    if (credit.known_for_department == "Acting" || credit.known_for_department == "Directing")
+                    {
+                        <div>@credit.name (@credit.known_for_department)</div>
+                    }
+                }
+                </div>
+            </dd>
+
+            <!-- Movie Poster -->
+            <dt>Poster</dt>
+            <dd><img class="movie-poster" src="@($"https://image.tmdb.org/t/p/w500{Model.Poster_Path}")" alt="@Model.title Poster" /></dd>
+        </dl>
+    </div>
+    <form action="@Url.Action("Add", "WishList", new { movieid = Model.id })" method="post">
+        <button style="background-color: darkgreen; border-color: darkgreen" type="submit" class="btn btn-primary">Add to Wishlist</button>
+    </form>
+    <!-- Back to List Button -->
+    <a asp-controller="Home" asp-action="Index" class="back-button" style="background-color: grey; border-color: grey">Back to List</a>
+</div>

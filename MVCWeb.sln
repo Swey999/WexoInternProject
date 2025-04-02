@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WexoTask", "WexoTask\WexoTask.csproj", "{44B07D0C-C9FE-4DF8-901B-A353FF7A1139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{A58F64C7-D084-421A-8765-389FCE30674B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44B07D0C-C9FE-4DF8-901B-A353FF7A1139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B07D0C-C9FE-4DF8-901B-A353FF7A1139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B07D0C-C9FE-4DF8-901B-A353FF7A1139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B07D0C-C9FE-4DF8-901B-A353FF7A1139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58F64C7-D084-421A-8765-389FCE30674B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58F64C7-D084-421A-8765-389FCE30674B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58F64C7-D084-421A-8765-389FCE30674B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58F64C7-D084-421A-8765-389FCE30674B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89E79139-2D4D-4DA4-A958-B9A5A2356907}
+	EndGlobalSection
+EndGlobal
